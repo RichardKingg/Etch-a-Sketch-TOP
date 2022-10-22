@@ -8,9 +8,11 @@ const colorInput = document.getElementById("colorInput");
 // let cols = document.getElementsByClassName("cell");
 
 let gSize = 16;
+let defaultColor = "#000000";
 
 userInput.onmousemove = (e) => sliderText(e.target.value);
 userInput.onchange = (e) => grdSize(e.target.value);
+colorInput.oninput = (e) => changeColor(e.target.value);
 
 //function for grid size, input from user
 function grdSize(userInput) {
@@ -24,6 +26,10 @@ function grdSize(userInput) {
     cell.classList.add("cells");
     container.appendChild(cell);
   }
+}
+
+function changeColor(newColor) {
+  defaultColor = newColor;
 }
 
 function sliderText(userInput) {
