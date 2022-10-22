@@ -3,6 +3,7 @@ let userInput = document.getElementById("userInput");
 const sizeText = document.getElementById("sizeText");
 const colorBtn = document.getElementById("colorBtn");
 const clrBtn = document.getElementById("clrBtn");
+const colorInput = document.getElementById("colorInput");
 // let rows = document.getElementsByClassName("gRow");
 // let cols = document.getElementsByClassName("cell");
 
