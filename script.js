@@ -1,14 +1,19 @@
 const container = document.getElementById("container");
+let userInput = document.getElementById("userInput");
+const sizeText = document.getElementById("sizeText");
+const colorBtn = document.getElementById("colorBtn");
+const clrBtn = document.getElementById("clrBtn");
 // let rows = document.getElementsByClassName("gRow");
 // let cols = document.getElementsByClassName("cell");
 
+let gSize = 16;
+
+userInput.onmousemove = (e) => sliderText(e.target.value);
+userInput.onchange = (e) => grdSize(e.target.value);
+
 //function for grid size, input from user
-function grdSize(gSize) {
-  gSize = parseInt(prompt("Insert grid size"));
-  if (gSize >= 100) {
-    alert("please select a number below 100");
-    location.reload();
-  }
+function grdSize(userInput) {
+  gSize = userInput;
 
   container.style.gridTemplateColumns = `repeat(${gSize}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${gSize}, 1fr)`;
@@ -19,6 +24,15 @@ function grdSize(gSize) {
     container.appendChild(cell);
   }
 }
+
+function sliderText(userInput) {
+  sizeText.textContent = `${userInput} x ${userInput}`;
+}
+
+//when user moves slider, executes function
+userInput.addEventListener("mouseup", function () {
+  grdSize(userInput);
+});
 
 // function mkRows(gSize) {
 //   //this loop is for rows
@@ -37,8 +51,3 @@ function grdSize(gSize) {
 //     }
 //   }
 // }
-
-//when page loads, execute the function
-window.addEventListener("load", function () {
-  grdSize();
-});
