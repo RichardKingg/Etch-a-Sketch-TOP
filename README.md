@@ -3,6 +3,7 @@
 16x16 dynamic grid webpage for drawing sketches!
 
 Pseudocode:
+
 1- Create 16x16 grid with divisions.
 
 2- Resize grid dynamically with gridTemplate.
