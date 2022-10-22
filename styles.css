@@ -1,27 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+}
+
 #container {
+  display: grid;
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+}
+
+/* .gRow {
+  border: 1px solid black;
+  height: auto;
+  width: auto;
   display: flex;
   flex-grow: 1;
-
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border: 3px solid black;
-}
-
-.gRow {
-  border: 1px solid black;
-  min-width: 20px;
-  min-height: 20px;
-  display: flex;
-  flex: 1 1 auto;
   flex-direction: row;
-}
+} */
 
-.gCol {
+/* .cell {
   border: 1px solid black;
-  min-width: 20px;
-  min-height: 20px;
+  width: auto;
+  height: auto;
   display: flex;
-  flex: 1 1 auto;
+  flex-grow: 1;
   flex-direction: column;
-}
+} */
