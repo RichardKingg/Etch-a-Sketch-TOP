@@ -13,6 +13,7 @@ let defaultColor = "#000000";
 userInput.onmousemove = (e) => sliderText(e.target.value);
 userInput.onchange = (e) => grdSize(e.target.value);
 colorInput.oninput = (e) => changeColor(e.target.value);
+clrBtn.onclick = () => reloadContainer();
 
 //function for grid size, input from user
 function grdSize(userInput) {
@@ -30,6 +31,15 @@ function grdSize(userInput) {
   }
 }
 
+function reloadContainer() {
+  clrContainer();
+  grdSize(gSize);
+}
+
+function clrContainer() {
+  container.innerHTML = "";
+}
+
 function changeColor(newColor) {
   defaultColor = newColor;
 }
@@ -44,8 +54,13 @@ function sliderText(userInput) {
   sizeText.textContent = `${userInput} x ${userInput}`;
 }
 
+window.onload = () => {
+  grdSize(16);
+};
+
 //when user moves slider, executes function
 userInput.addEventListener("mouseup", function () {
+  clrContainer();
   grdSize(userInput);
 });
 
