@@ -25,11 +25,19 @@ function grdSize(userInput) {
     const cell = document.createElement("div");
     cell.classList.add("cells");
     container.appendChild(cell);
+    cell.addEventListener("mouseover", paintCell);
+    cell.addEventListener("mousedown", paintCell);
   }
 }
 
 function changeColor(newColor) {
   defaultColor = newColor;
+}
+
+function paintCell(e) {
+  if (e.type === "mouseover" && !"mousedown") return;
+
+  e.target.style.backgroundColor = defaultColor;
 }
 
 function sliderText(userInput) {
